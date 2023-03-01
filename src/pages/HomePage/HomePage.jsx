@@ -1,7 +1,12 @@
+import Container from 'shared/components/Container';
+import ProductList from 'components/Products/ProductList';
+
+import { products } from 'products';
+
 export default function HomePage() {
   return (
-    <>
-      <h1>homepage</h1>
-    </>
+    <Container>
+      <ProductList products={products} />
+    </Container>
   );
 }

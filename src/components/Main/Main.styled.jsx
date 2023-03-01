@@ -8,11 +8,13 @@ export const MainWrapper = styled.main`
 export const Banner = styled.div`
   margin: 5px;
   width: 150px;
-  // height: calc(100% - 110px);
   background-color: tomato;
   border: 1px solid #eee;
+  border-radius: 10px;
 `;
 
-export const Content = styled.div`
+export const Content = styled.section`
+  margin: 20px auto;
+  margin-bottom: 5px;
   flex-grow: 1;
 `;
