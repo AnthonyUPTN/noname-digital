@@ -11,6 +11,7 @@ export const Banner = styled.div`
   background-color: tomato;
   border: 1px solid #eee;
   border-radius: 10px;
+  // flex-grow: 1;
 `;
 
 export const Content = styled.section`

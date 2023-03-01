@@ -13,23 +13,23 @@ export default function ProductList({ products }) {
         // display: 'flex',
         // flexDirection: 'column',
         borderRadius: '10px',
+        boxShadow: '0px -1px 16px 1px rgba(34, 60, 80, 0.1)',
         owerflow: 'hidden',
       }}
     >
-      <img
-        style={{
-          width: '70px',
-          height: '70px',
-          borderRadius: '5px',
-          marginBottom: '15px',
-        }}
-        src={images[0]}
-        alt={title}
-      />
-      <div
-        className="
-      "
-      >
+      <a href={'http://htmlbook.ru/html/a/target'}>
+        <img
+          style={{
+            width: '90px',
+            height: '90px',
+            borderRadius: '5px',
+            marginBottom: '15px',
+          }}
+          src={images[0]}
+          alt={title}
+        />
+      </a>
+      <div className="">
         <p>{title}</p>
         <span>{price}</span>
         <span>{category}</span>
