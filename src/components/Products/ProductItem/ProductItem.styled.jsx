@@ -1,62 +1,82 @@
 import styled from 'styled-components';
 
-export const Line = styled.span`
-  margin-bottom: 13px;
-  display: block;
-
-  width: 200px;
-  height: 4px;
-
-  background: ${p => p.theme.colors.news.gradient};
-  border-radius: ${p => p.theme.radii.lg};
-  box-shadow: ${p => p.theme.colors.news.shadow};
-
-  @media screen and (min-width: 768px) {
-    width: 280px;
-    height: 8px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    width: 340px;
-  }
-`;
-
 export const Item = styled.li`
-  margin-bottom: 40px;
+  padding: 15px;
+  margin: 15px;
+  position: relative;
+  flex-basis: calc((100% / 4) - 65px);
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0px -1px 16px 1px rgba(34, 60, 80, 0.1);
+  min-width: 200px;
+  &:hover {
+    transform: scale(1.02);
   }
 `;
 
-export const Title = styled.h3`
-  margin-bottom: 16px;
-
-  font-weight: ${p => p.theme.fontWeights.bold};
-  font-size: ${p => p.theme.fontSizes.f};
-  letter-spacing: ${p => p.theme.letterSpacing.a};
+export const ImgWrapper = styled.a`
+  margin-bottom: 15px;
 `;
 
-export const Description = styled.p`
-  margin-bottom: 20px;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 8;
-  overflow: hidden;
-
-  @media screen and (min-width: 768px) {
-    -webkit-line-clamp: 6;
-  }
-  @media screen and (min-width: 1280px) {
-    -webkit-line-clamp: 5;
-  }
+export const Img = styled.img`
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
 `;
 
-export const Wrapper = styled.div`
+export const DescriptionWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Title = styled.h2`
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
+`;
+
+export const Price = styled.span`
+  font-size: 18px;
+  color: green;
+  margin-bottom: 5px;
+`;
+
+export const Category = styled.span`
+  color: #a7a4a4;
+`;
+
+export const Button = styled.button`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  // & > svg {
+  //   fill: #a7a4a4;
+  // }
+
+  &:hover {
+    background: #eee;
+    border: 1px solid #eee;
+    border-radius: 50%;
+  }
+  &: hover> svg {
+    fill: red;
+  } ;
 `;

@@ -1,44 +1,43 @@
+import PropTypes from 'prop-types';
+
 import { List } from './ProductList.styled';
 
-// import ProductItem from '../ProductItem';
+import ProductItem from 'components/Products/ProductItem';
 
-export default function ProductList({ products }) {
-  const elements = products.map(({ id, title, price, category, images }) => (
-    <li
-      key={id}
-      style={{
-        // width: '25%',
-        padding: '10px',
-        border: '1px solid black',
-        // display: 'flex',
-        // flexDirection: 'column',
-        borderRadius: '10px',
-        boxShadow: '0px -1px 16px 1px rgba(34, 60, 80, 0.1)',
-        owerflow: 'hidden',
-      }}
-    >
-      <a href={'http://htmlbook.ru/html/a/target'}>
-        <img
-          style={{
-            width: '90px',
-            height: '90px',
-            borderRadius: '5px',
-            marginBottom: '15px',
-          }}
-          src={images[0]}
-          alt={title}
-        />
-      </a>
-      <div className="">
-        <p>{title}</p>
-        <span>{price}</span>
-        <span>{category}</span>
-      </div>
-    </li>
-  ));
+export default function ProductList({ products, func }) {
+  const elements = products.map(
+    ({ id, title, price, category, images, favorite, toggleFavorite }) => (
+      <ProductItem
+        key={id}
+        id={id}
+        title={title}
+        price={price}
+        category={category}
+        images={images}
+        favorite={favorite}
+        func={func}
+      />
+    )
+  );
 
   return <List>{elements}</List>;
 }
+
+ProductList.defaultProps = {
+  products: [],
+};
+
+ProductList.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      category: PropTypes.string.isRequired,
+      images: PropTypes.arrayOf(PropTypes.string),
+    })
+  ),
+};
 
 // "id": 1,
 //       "title": "iPhone 9",

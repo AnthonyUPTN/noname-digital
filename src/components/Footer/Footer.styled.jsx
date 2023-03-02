@@ -5,6 +5,8 @@ export const FooterWrapper = styled.footer`
   align-items: center;
   justify-content: center;
   height: 50px;
+  // width: 100%;
+
   background-color: #e0e0e0;
 `;
 
